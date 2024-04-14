@@ -1,0 +1,29 @@
+package static_;
+
+import java.util.Arrays;
+
+import static_.other.Function;
+
+public class Quiz01 {
+	public static void main(String[] args) {
+		// 아래 매서드를 구현
+		// 단, Function 클래스 아래 작성할 것
+		
+		// 1. 1 ~ n까지 합계를 반환
+		int sum = Function.total(5);
+		System.out.println("sum : " + sum);
+		
+		// 2. 절대값을 반환하는 매서드
+		int n = Function.absolute(-5);
+		System.out.println("n : " + n);
+		
+		// 3. 배열을 오름 차순 정렬 (=선택 정렬)
+		int[] arr = new int[] {50,10,20,40,30};
+		Function.selectSort(arr);
+		System.out.println("arr = " + Arrays.toString(arr));
+		
+		// 4. 소수를 판별하는 매서드
+		boolean prime = Function.isPrime(7);
+		System.out.println("prime : " + prime);
+	}
+}
