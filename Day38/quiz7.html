@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz7.html</title>
+</head>
+
+<body>
+    <form>
+    <h1>상품 주문서</h1>
+    <hr>
+    
+    
+    <fieldset>
+        <legend>개인정보</legend>
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input name="name" placeholder="공백없이 입력하세요"></td>
+            </tr>
+            <tr>
+                <td>연락처</td>
+                <td><input name="phone" placeholder="연락 가능한 번호"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>배송자 정보</legend>
+        <table>
+            <tr>
+                <td>주소</td>
+                <td><input name="address"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td><input name="phone" type="number"></td>
+            </tr>
+            <tr>
+                <td>메모</td>
+                <td><textarea name="motive" cols="35" rows="5"></textarea></td>
+            </tr>   
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>주문 정보</legend>
+
+        <table>
+            <tr>
+                <td><input type="checkbox"> 과테말라 안티구이 (100g)</td>
+                <td><input type="number" value="0"> 개</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> 인도네시아 만델리 (100g)</td>
+                <td><input type="number" value="0"> 개</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> 팀라는도다(블렌딩) (100g)</td>
+                <td><input type="number" value="0"> 개</td>
+            </tr>
+
+        </table>
+    </fieldset>
+
+    <br>
+        <button>주문하기</button>
+        <button type="reset">다시작성</button>
+    </form>
+</body>
+</html>
