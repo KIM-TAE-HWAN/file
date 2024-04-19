@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz1.html</title>
+</head>
+<body>
+    <h1>quiz1</h1>
+    <hr>
+
+    <h4>사용자에게 국 영 수 점수를 입력 받아서 합계/평균을 출력</h4>
+
+    <p></p>
+
+    <script>
+        var kor = Number(prompt('국어 점수 입력'));
+        var eng = Number(prompt('영어 점수 입력'));
+        var mat = Number(prompt('수학 점수 입력'));
+        
+        
+        var sum = kor + eng + mat;
+        var avg = sum / 3;
+
+        var result = 
+            '<li>합계 : ' + sum + '</li>' +
+            '<li>평균 : ' + avg + '</li>';
+        document.getElementsByTagName('p')[0].innerHTML = result;
+
+        console.log('result : ' + result);
+    </script>
+</body>
+</html>
