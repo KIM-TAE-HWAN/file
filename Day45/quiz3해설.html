@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz3</h1>
+    <hr>
+
+    <h3>input의 값 가져오기 및 검증</h3>
+
+    <p><input type="text" placeholder="아이디 입력"></p>
+    <p><input type="password" placeholder="패스워드"></p>
+    <p><input type="password" placeholder="패스워드 확인" onblur="checkPasswordMatch()"></p>
+    <p><input type="email" placeholder="이메일 입력"></p>
+    <button id="joinButton">가입</button>
+
+    <p style="color: red; font-weight: bold;"></p>
+
+    <script>
+        document.getElementById('joinButton').addEventListener('click', join);
+
+        function checkPasswordMatch() {
+            let password = document.getElementsByTagName('input')[1].value;
+            let confirmPassword = document.getElementsByTagName('input')[2].value;
+            
+            if (password !== confirmPassword) {
+                document.getElementsByTagName('p')[4].innerHTML = '비밀번호가 일치하지 않습니다';
+                document.getElementsByTagName('input')[1].value = ''; // Clear password
+                document.getElementsByTagName('input')[2].value = ''; // Clear confirmation
+                document.getElementsByTagName('input')[1].focus(); // Move cursor back to password field
+            } else {
+                document.getElementsByTagName('p')[4].innerHTML = '';
+                document.getElementsByTagName('input')[3].focus(); // Move cursor to email field
+            }
+        }
+
+        function join() {
+            let input = document.getElementsByTagName('input');
+            let id = input[0].value;
+            let pw = input[1].value;
+            let pwcheck = input[2].value;
+            let email = input[3].value;
+
+            let msg = '모든 필드를 입력하세요';
+
+            if (id && pw && pwcheck && email) {
+                if (pw != pwcheck) {
+                    msg = '비밀번호가 일치하지 않습니다';
+                } else {
+                    msg = '가입이 완료되었습니다';
+                }
+            }
+
+            document.getElementsByTagName('p')[4].innerHTML = msg;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz3.html</title>
+</head>
+<body>
+    <h1>메뉴 옮기기</h1>
+    <hr>
+
+    <fieldset class="user">
+        <legend>사용자 정보</legend>
+        <p><input type="text" id="user1"></p>
+        <p><input type="text" id="user2"></p>
+        <p><input type="text" id="user3"></p>
+    </fieldset>
+
+    <fieldset class="order">
+        <legend>주문 정보</legend>
+        <input type="checkbox" onclick="run()">사용자 정보와 동일
+        <p><input type="text" id="order1"></p>
+        <p><input type="text" id="order2"></p>
+        <p><input type="text" id="order3"></p>
+    </fieldset>
+
+    <script>
+        function run() {
+            let user1 = document.getElementById('user1').value;
+            let user2 = document.getElementById('user2').value;
+            let user3 = document.getElementById('user3').vlaue;
+
+            document.getElementById('order1').value = user1;
+            document.getElementById('order2').value = user2;
+            document.getElementById('order3').value = user3;
+            
+        }
+    </script>
+</body>
+</html>

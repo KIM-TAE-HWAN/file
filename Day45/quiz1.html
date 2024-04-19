@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz1.html</title>
+</head>
+<body>
+    <h1>Quiz1</h1>
+    <hr>
+
+    <input type="number" id="numberInput">
+    <button onclick="result()">입력</button>
+    <hr>
+
+    <h4>결과 : 1 ~ n까지의 약수 출력</h4>
+    <p id="divisorsResult"></p>
+
+    <h4>결과 : 소수 판별</h4>
+    <p></p>
+
+    <script>
+        function result(n) {
+            let n = parseInt(document.getElementById('numberInput').value);
+            
+            let divisors = find(n);
+            document.getElementById('divisorsResult').innerHTML = `약수: ${divisors.join(', ')}`;
+            }     
+        
+        
+        function find(num) {
+            let divisors = [];
+            for (let i = i; i <= num; i++) {
+                if (num % i ===0) {
+                    divisors.push(i);
+                }
+            }
+            return divisors;
+        }
+        
+        
+    </script>
+</body>
+</html>

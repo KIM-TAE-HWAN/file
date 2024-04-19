@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+
+
+</head>
+<body>
+    <h1>class 복습</h1>
+    <hr>
+
+    <script src="js/ex01.js"></script>
+
+    <ol>
+        <li>Car 클래스를 선언한다. 필드는 모델명, 속도를 가진다</li>
+        <li>매서드는 show(), accel() 두 가지를 가진다</li>
+        <li>show()는 자동차의 현재 정보를 출력. accel()은 속도를 증가시키는 매서드</li>
+    </ol>
+
+    <h4>출력은 편한대로 진행</h4>
+
+    <ul></ul>
+
+    <script>
+        let ul = document.getElementsByTagName('ul');
+        
+
+        let  car= new car('전사', 100, 10);
+        
+
+        ul[0].innerHTML = 
+                `<li>${car.show()}</li>` + 
+                `<li>${car.show()}</li>`;
+
+
+    </script>
+</body>
+</html>
