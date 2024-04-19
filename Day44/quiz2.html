@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz2.html</title>
+</head>
+<body>
+    <h1>quiz2</h1>
+    <hr>
+
+    <h3>1 ~ n까지 합계를 반환하는 함수 (=즉시 실행 함수)</h3>
+    <p></p>
+
+    <h3>절대값을 반환 (=화살표 함수)</h3>
+    <p></p>
+
+    <h3>함수를 거꾸로 만들어 반환(=익명 함수)</h3>
+    <p></p>
+
+    <script>
+        // 1.
+        var result = (function sum(n) {
+            let result = 0;
+
+            for (let i = 1; i <= n; i++) {
+                result += i;
+            }
+
+            return result;
+        })(10);
+
+        document.getElementsByTagName('p')[0].innerHTML = result;
+
+        // 2.
+        let abs = (n) => {
+            if (n < 0) {
+                return -n;
+            }
+
+            return n;
+        }
+
+        document.getElementsByTagName('p')[1].innerHTML = abs(-5);
+
+        // 3.
+        var rev = function(n) {
+            let result = 0;
+
+            while (n != 0) {
+                result = result * 10 + n % 10;
+                n = parseInt(n / 10);
+            }
+
+            return result;
+        }
+
+        document.getElementsByTagName('p')[2].innerHTML = rev(123);
+
+    </script>
+</body>
+</html>

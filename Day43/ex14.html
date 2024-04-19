@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14.html</title>
+</head>
+<body>
+    <h1>함수의 반환값</h1>
+    <hr>
+
+    <ul>
+        <li>반환값이 없는 함수 : 종속문만 실행 후 종료</li>
+        <li>반환값이 있는 함수 : 종속을 실행 후 결과를 리턴</li>
+    </ul>
+
+    <div></div>
+
+    <script>
+        // 반환값 x
+        function adder1(n1,n2) {
+            console.log(`${n1} + ${n2} = ${n1 + n2}`);
+        }
+        // 반환값
+        function adder2(n1,n2) {
+            return n1 + n2;
+        }
+
+        adder1(5,4);
+
+        let result = adder2(1,8);
+    //  let result = 9;
+        
+    console.log('result = ' + result);
+
+    </script>
+
+</body>
+</html>

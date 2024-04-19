@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz5.html</title>
+</head>
+<body>
+    <h1>quiz5</h1>
+    <hr>
+
+    <h4>1. 절대값을 반환하는 함수</h4>
+    <p></p>
+
+    <h4>2. 1 ~ n까지의 곱을 반환하는 함수</h4>
+    <p></p>
+
+    <h4>3. 전달한 정수를 거꾸로 반환하는 함수</h4>
+    <p></p>
+
+    <script>
+        // 1.
+        function abs(n) {
+            if(n<0) {
+                n = -n;
+            }
+            else {
+                n = n;
+            }
+
+            return n;
+        }
+
+        let result1 = abs(-6);
+
+        document.getElementsByTagName('p')[0].innerHTML = result1;
+
+        // 2.
+        function mul(n) {
+            let mul=1;
+
+            for(let i= 1; i<=n; i++) {
+                mul*= i;
+            }
+            return mul;
+        }
+
+        let result2 = mul(4);
+
+        document.getElementsByTagName('p')[1].innerHTML = result2;
+
+        // 3. 
+        function reverse(n) {
+            let minus = false;
+  
+            if (n < 0) {
+                n *= -1; 
+                minus = true;
+            }
+  
+            let numText = n.toString();
+            let result = '';
+  
+            for (let i = numText.length-1; i >= 0; i--) {
+                result += numText[i];
+            }
+  
+            result = minus ? result * -1 : Number(result);
+  
+            return result;
+        }
+
+        let result3 = reverse(1234);
+        document.getElementsByTagName('p')[2].innerHTML = result3;
+
+    </script>
+</body>
+</html>

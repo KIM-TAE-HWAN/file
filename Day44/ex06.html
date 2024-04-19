@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06.html</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>외부 js 적용</h1>
+    <hr>
+
+    <script src="js/ex06.js"></script>
+
+    <p></p>
+
+    <div></div>
+    <button>클릭</button>
+
+    <ul></ul>
+
+    <script>
+        let p = document.getElementsByTagName('p');
+        let div = document.getElementsByTagName('div')[0];
+        let button = document.getElementsByTagName('button');
+        let ul = document.getElementsByTagName('ul')[0];
+
+        p[0].innerHTML = rev(1234);
+
+        button[0].addEventListener('click', fill(div));
+
+        ul.innerHTML = `<li>${stu.show()}</li>`;
+        ul.innerHTML += `<li>합계 ${stu.total()}</li>`;
+
+        
+    </script>
+
+
+
+</body>
+</html>

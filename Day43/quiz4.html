@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz4.html</title>
+</head>
+<body>
+    <h1>구구단 표</h1>
+    <hr>
+
+    <table border="1" cellspacing="0" cellpadding="4" align="center"></table>
+    
+    <script>
+        let msg = '';
+
+
+        for(let i = 2; i<10; i++) {
+            msg += `${i}단`;
+           for(let j=1; j <10; j++) {
+            msg += `<tr><td>${i} X ${j} = ${i * j}</td>`;  
+                  
+            }
+        }
+
+        document.getElementsByTagName('table')[0].innerHTML = msg;
+    </script>
+</body>
+</html>

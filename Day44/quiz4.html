@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz4.html</title>
+</head>
+<body>
+    <h1>quiz4</h1>
+    <hr>
+
+    <script src="js/Unit.js"></script>
+
+    <ul>
+        <li>Unit 클래스를 js/Uinit.js에 작성한다</li>
+        <li>필드는 이름, hp, atk를 가진다</li>
+        <li>매서드는 show(), attack()을 가진다</li>
+        <li>show()는 현재 unit의 정보를 출력</li>
+        <li>attack은 상대방 unit를 공격하는 매서드</li>
+    </ul>
+
+    <h4>공격 전</h4>
+    <ul></ul>
+
+    <h4>공격 후</h4>
+    <ul></ul>
+
+    <script>
+
+        const unit1 = new Unit('전사', 100, 20);
+        const unit2 = new Unit('마법사', 120, 15);
+
+        let ul = document.getElementsByTagName('ul');
+
+        ul[1].innerHTML = `<li>${unit1.show()}</li>`;
+        ul[1].innerHTML += `<li>${unit2.show()}</li>`;
+
+        unit1.attack(unit2);
+
+        ul[2].innerHTML = `<li>${unit1.show()}</li>`;
+        ul[2].innerHTML += `<li>${unit2.show()}</li>`;
+
+    </script>
+</body>
+</html>

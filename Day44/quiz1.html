@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03.html</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>quiz1</h1>
+    <hr>
+
+    <div></div>
+
+    <ol>
+        <li>마우스를 올리면 배경색 blue</li>
+        <li>마우스를 누르는 동안 width 200px</li>
+        <li>마우스를 누른것을 떼면 height 200px</li>
+        <li>마우스를 빼면 배경색 red, width/height 100px</li>
+    </ol>
+
+    <script>
+        var div = document.getElementsByTagName('div')[0]; 
+
+        div.onmouseover = (e) => {
+            e.target.style.backgroundColor = 'blue';
+        };
+
+        div.onmousedown = (e) => {
+            e.target.style.width = '200px';
+        };
+
+        div.onmouseup = (e) => {
+            e.target.style.height = '200px';
+        };
+
+        div.onmouseout = (e) => {
+            e.target.style.backgroundColor = 'red';
+            e.target.style.width = '100px';
+            e.target.style.height = '100px'; 
+        };
+    </script>
+</body>
+</html>
