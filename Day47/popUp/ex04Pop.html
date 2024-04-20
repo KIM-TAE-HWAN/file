@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04Pop.html</title>
+    <style>
+        fieldset {
+            display: inline;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex04 팝업창</h1>
+    <hr>
+    
+    <fieldset>
+        <legend>취업 정보</legend>
+        <input type="text" placeholder="이름" id="name">
+        <input type="text" placeholder="나이" id="age">
+        <input type="text" placeholder="주소" id="address">
+
+        <button onclick="transform()">전송</button>
+    </fieldset>
+
+    <script>
+        function transform() {
+        // window.opener == ex04.html
+        // 즉, 팝업창을 연 부모 창(=window)을 의미
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+            let address = document.getElementById('address').value;
+
+        opener.getPopUpData(
+            ` <li>이름 : ${name}</li>` +
+            ` <li>나이 : ${age}</li>` + 
+            ` <li>주소 : ${address}</li>`
+        );
+        
+        close();
+        }
+    </script>
+</body>
+</html>

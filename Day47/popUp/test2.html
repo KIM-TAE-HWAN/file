@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2.html</title>
+    <style>
+        fieldset {
+            display: inline;
+        }
+        input {
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>quiz1 팝업창</h1>
+    <hr>
+
+    <fieldset>
+        <legend>회원 정보</legend>
+
+        <input type="text" placeholder="이름" id="name">
+        <input type="text" placeholder="나이" id="age">
+
+        <button onclick="transform()">전송</button>
+    </fieldset>
+
+    <script>
+        function transform() {
+           let name = document.getElementById('name').value;
+           let age = document.getElementById('age').value; 
+           let adult = age >= 19 ? '성인' : '미성년자';
+
+
+            let msg = 
+                `<li>이름 : ${name}</li>` +
+                `<li>나이 : ${age}</li>` +
+                `<li>성인 : ${adult}</li>`;
+
+           
+
+            opener.getPopUpData(msg);
+            close();
+        }
+    </script>
+</body>
+</html>
