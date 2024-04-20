@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz1.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h1>휴게소별 날씨 API</h1>
+    <hr>
+
+    <ol>
+        <li><a href="https://data.ex.co.kr/openapi/basicinfo/openApiInfoM?apiId=0508">사이트</a></li>
+        <li>위의 사이트에서 제공하는 API를 활용해서 휴게소별 날씨 정보를 받아온다</li>
+        <li>그 중 휴게소 이름과 현재 기온값 이 2가지를 가져온다</li>
+        <li>일단 그래프 이전에 table 태그로 정보를 모두 출력해본다</li>
+        <li>테이블에 출력을 다 했으면 그래프로 화면에 출력. 종류는 아무거나</li>
+    </ol>
+    
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>idx</th>
+                <th>휴게소명</th>
+                <th>기온</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let url = 'https://data.ex.co.kr/openapi/restinfo/restWeatherList?key=test&type=json&sdate=20230302&stdHour=10';
+
+        fetch(url, {
+            method: 'get',
+        
+        })         
+        .then(response => response.json()) 
+        .then(data => {                    
+
+            let list = data.list;
+            let msg = '';
+
+            for (let i = 0; i < list.length; i++) {
+                
+                msg  +=
+                    `<tr>` + 
+                        `<td>${i}</td>` +
+                        `<td>${list[i].unitName}</td>` +
+                        `<td>${list[i].tempValue}</td>`  +
+                    `</tr>`;
+            }
+
+            document.querySelector('tbody').innerHTML = msg;
+                
+        });    
+    </script> -->
+    
+    <details>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </details>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        let url = 'https://data.ex.co.kr/openapi/restinfo/restWeatherList?key=test&type=json&sdate=20230302&stdHour=10';
+    
+        fetch(url, {
+            method: 'get',
+        
+        })         
+        .then(response => response.json()) 
+        .then(data => {                    
+    
+            let list = data.list;
+            let labels = [];
+            let temp = [];
+    
+            for (let i = 0; i < list.length; i++) {
+                labels.push(list[i].unitName);
+                temp.push(list[i].tempValue);
+            }
+
+            let ctx = document.getElementById('myChart');
+            let myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '기온',
+                        data: temp,
+                        backgroundColor: 'red',
+                        borderColor: 'white',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });    
+    </script>
+
+</body>
+</html>

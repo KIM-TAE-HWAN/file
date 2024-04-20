@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김태환A</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="img/icon/LOGO.jpg">
+         
+        <nav class="menu">
+            <ul>
+                <li>DD소개</li>
+                <li id="bread">빵만들기
+                    <div class="submenu">
+                        <p>기본레시피</p>
+                        <p>고급레시피</p>
+                    </div>
+                </li>
+                <li id="com">커뮤니티
+                    <div class="etc">
+                        <p>나만의레시피</p>
+                        <p>내가 만든 빵</p>
+                        <p>제빵 노하우</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="container">         
+                <div class="slider">        
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contents">
+            <article>
+                <h2>공지사항</h2>
+                <hr>
+
+                <table>
+                    <tr>
+                        <th>내용</th>
+                        <th>날짜</th>
+                    </tr>
+                    <tr>
+                        <td>제1회 DD베이커리 워크숍에 초대합니다(서울권)</td>
+                        <td>2017-12-12</td>
+                    </tr>
+                    <tr>
+                        <td>올림픽공원, 카페 초보 여성 창업을 추천받습니다</td>
+                        <td>2017-12-10</td>
+                    </tr>
+                    <tr>
+                        <td>맛과 영양, 환경문제까지 생각하는 베이커리!</td>
+                        <td>2018-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>고품질 크림으로 만든 디저트로 달콤하게 겨울나기</td>
+                        <td>2018-03-07</td>
+                    </tr>
+                    <tr>
+                        <td>온가족이 함께 즐기는 베이킹 체험 교실</td>
+                        <td>2018-03-05</td>
+                    </tr>
+                </table>
+
+            </article>
+            <article class="info">
+                <h2>Partner</h2>
+
+                <br>
+                <img src="img/icon/PARTNER.jpg" onclick="popUp()">
+                <br>
+                <img src="img/icon/PARTNER_UP.png">
+            </article>
+        </section>
+
+        <section class="icons">
+            <div>
+                <img src="img/icon/icon1.png">
+                <button>고수의 레시피</button>
+            </div>
+            <div>
+                <img src="img/icon/icon2.png">
+                <button>모임일정</button>
+            </div>
+            <div>
+                <img src="img/icon/icon3.png">
+                <button>식품안전관리</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <ul>
+                <li>법적고지</li>
+                <li>개인정보취급방침</li>
+                <li>개인정보처리방침</li>
+            </ul>
+        </section>
+
+        <section>
+            <ul>
+                <li>사업자번호 : 228-11-123456</li>
+                <li>상호명 : (주)ITBANK</li>
+                <li>대표자 : 홍길동</li>
+                <li>개인정보관리책임자 : 홍길동</li>
+                <li>상담전화 : 1588-7676</li>
+                <li>사업장주소 : 부산광역시 해운대구 센텀</li>
+                <li>E-mail : itbank@gmail.com</li>
+            </ul>
+        </section>
+    </footer>
+
+    <script>
+
+        var pop;
+
+        function popUp() {
+            pop = open(
+            'popUp.html',
+            '_blank', 
+            'top = 100, left = 100, width = 450, height = 600');
+        }
+
+        function receive(comment) {
+            console.log(comment)
+        }
+
+    </script>
+
+</body>
+</html>

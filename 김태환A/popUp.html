@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popUp</title>
+    <style>
+        fieldset {
+            display: inline;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body> 
+    <fieldset>
+        <legend>의견을 남겨주세요</legend>
+        <textarea id="comment" rows="30" cols="60"></textarea>
+        <br>
+        <button onclick="comment()">전송</button>
+    </fieldset>
+
+    <script>
+        function comment() {
+            let comment = document.getElementById('comment').value;
+            opener.receive(comment);
+            close();
+        }
+    </script>
+</body>
+</html>
